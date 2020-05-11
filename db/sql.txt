@@ -1,0 +1,218 @@
+//一级分类
+create table brand
+(
+ 	cid int primary key auto_increment,
+ 	cbrand char(10) unique
+);
+
+insert into brand values(null,'华为');
+insert into brand values(null,'小米');
+insert into brand values(null,'苹果');
+insert into brand values(null,'三星');
+insert into brand values(null,'vivo');
+insert into brand values(null,'其他');
+
+
+//二级分类
+create table type
+(
+	tid int primary key auto_increment,
+	ttype char(10) unique,
+	cid int,
+	constraint f_k foreign key(cid) references brand(cid)
+);
+insert into type values(null,'荣耀',1);
+insert into type values(null,'mate系列',1);
+insert into type values(null,'p系列',1);
+insert into type values(null,'小米系列',2);
+insert into type values(null,'MIX系列',2);
+insert into type values(null,'Note系列',2);
+insert into type values(null,'Mac',3);
+insert into type values(null,'iPhone',3);
+insert into type values(null,'iPad',3);
+insert into type values(null,'S系列',4);
+insert into type values(null,'A系列',4);
+insert into type values(null,'NEX系列',5);
+insert into type values(null,'X系列',5);
+insert into type values(null,'Z系列',5);
+insert into type values(null,'oppo系列',6);
+insert into type values(null,'一加系列',6);
+insert into type values(null,'锤子系列',6);
+
+// bname 手机名称 price 价格   brand 品牌  pic 手机图片   version 手机版本 sale 销量 
+create table phone
+(
+	bid int primary key auto_increment,
+	bname char(50) unique,  		##bname 手机名称
+	price float,					##price 价格
+	rulprice float,                 ##rulprice  现价
+	branda varchar(100),			##brand 品牌
+	pic varchar(50),				##pic 手机图片
+	versiona varchar(50),			##version 手机版本
+	publishTime date,				##publishTime 上市时间
+	color varchar(50),				##color  手机颜色
+	sale int,						##sale 销量
+	info1 int,						##是否推荐  0/1
+	info2 int,						##人气
+	info3 int,						##评分
+	info4 int,						##是否限时特惠 0/1
+	tid int,
+	constraint f_k2 foreign key(tid) references type(tid)
+);				现价：存在打折后，vip后的价钱
+// null 手机名称   价格  现价   品牌 手机图片  手机版本  上市时间  颜色 销量  是否推荐  人气  评分  是否限时特惠 0/1   id
+// 华为
+//荣耀系列  
+insert into phone values(null,'荣耀10 GT游戏加速 AIS手持夜景 AI摄影手机 双卡双待 荣耀10GT',2199,1799,"华为","static/img/neirongzhanshi/huawei/rongyao/rongyao10_1.png","全网通 6GB+64GB","2018-4-15","幻影蓝",65665,0,480,930,1,1);				*
+insert into phone values(null,'荣耀20 PRO DXO全球第二高分 4800万全焦段AI四摄 双光学防抖 麒麟980',3199,null,"华为","static/img/neirongzhanshi/huawei/rongyao/rongyao20PRO_1.png","全网通 8GB+128GB","2019-6-15","幻夜星河",81665,1,980,980,0,1);		*
+insert into phone values(null,'荣耀20i 3200万AI自拍 超广角三摄',1599,1399,"华为","static/img/neirongzhanshi/huawei/rongyao/rongyao20i_1.png","全网通 6GB+64GB","2019-4-18","渐变蓝",25615,1,58,960,1,1);			*
+insert into phone values(null,'荣耀V20 麒麟980 魅眼全视屏 4800万AI超清摄影 标配版',2999,2099,'华为','static/img/neirongzhanshi/huawei/rongyao/rongyaoV20_1.png','全网通 6GB+128GB','2018-12-15','幻夜黑',76615,0,680,970,1,1);                     *                            
+insert into phone values(null,'荣耀Magic2 魔法全视屏 麒麟980AI芯片 屏内指纹 超广角AI三摄 ',4299,2999,"华为","static/img/neirongzhanshi/huawei/rongyao/rongyaoMagic2_1.png","全网通 8GB+128GB","2018-10-15","渐变黑",32665,1,880,982,1,1);   *
+
+
+//Mate系列
+insert into phone values(null,'HUAWEI Mate 20 RS 保时捷设计 甄选进口牛皮材质，保时捷设计基因，卓然典藏的艺术珍品 ',12999,null,"华为","static/img/neirongzhanshi/huawei/Mate/Mate20RS_1.png","全网通 8GB+512GB","2018-10-1","玄黑",3665,0,870,996,0,2);						        *
+insert into phone values(null,'HUAWEI Mate 20 X（4G）麒麟980新一代人工智能芯片，4000万超大广角徕卡三摄，5000mAh大电池，石墨烯液冷散热技术加持旗舰手机 ',4099,null,"华为","static/img/neirongzhanshi/huawei/Mate/Mate20X_1.png","全网通 6GB+128GB","2018-10-2","宝石蓝",97665,1,965,972,0,2);  *
+insert into phone values(null,'HUAWEI Mate 20 麒麟980新一代人工智能芯片，6.53英寸珍珠屏，超高屏占比，超微距影像，超大广角徕卡三摄旗舰手机',3699,null,"华为","static/img/neirongzhanshi/huawei/Mate/Mate20_1.png","全网通 6GB+128GB","2018-10-2","樱粉金",297665,1,965,988,0,2);				*
+insert into phone values(null,'HUAWEI Mate 20 Pro (UD) 麒麟980 AI芯片 超广角徕卡三摄 OLED曲面屏 屏内指纹 4000万超大广角徕卡三摄|手持超级夜景|40W超级快充',5099,null,"华为","static/img/neirongzhanshi/huawei/Mate/Mate20Pro_1.png","全网通 8GB+128GB","2018-10-2","翡冷翠",127665,0,960,970,0,2);	*
+
+//p系列
+insert into phone values(null,'HUAWEI P30 麒麟980 超感光徕卡三摄 屏内指纹 双景录像',3988,null,"华为","static/img/neirongzhanshi/huawei/p/p30_1.png","全网通 6GB+128GB","2019-4-2","天空之境",87665,0,865,888,0,3);					*
+insert into phone values(null,'HUAWEI P20 Pro 4000万徕卡三摄 AI摄影大师 6GB+64GB 全网通版（亮黑色）',4488,null,"华为","static/img/neirongzhanshi/huawei/p/p20pro_1.png","全网通 6GB+64GB","2019-4-2","亮黑色",85765,0,967,983,0,3);						*
+insert into phone values(null,'HUAWEI P30 Pro 麒麟980 超感光徕卡四摄 屏内指纹 双景录像 8GB+128GB 全网通版（天空之境）',5488,null,"华为","static/img/neirongzhanshi/huawei/p/p30pro_1.png","全网通 8GB+128GB","2019-4-2","天空之境",107665,1,965,990,0,3);	*
+
+
+//小米  小米系列
+insert into phone values(null,'小米9 4800万超广角三摄 6GB+128GB全息幻彩蓝 骁龙855 全网通4G 双卡双待 水滴全面屏拍照智能游戏手机',2799,null,"小米","static/img/neirongzhanshi/xioami/xiaomi/xiaomi9_1.jpg","全网通 6GB+128GB","2019-2-2","幻彩蓝",267665,1,987,993,0,4);			*
+insert into phone values(null,'小米8屏幕指纹版 6GB+128GB 黑色 全网通4G 双卡双待 全面屏拍照智能游戏手机',1799,null,"小米","static/img/neirongzhanshi/xioami/xiaomi/xiaomi8_1.jpg","全网通 6GB+128GB","2018-9-2","黑色",1317665,1,997,993,0,4);									*
+insert into phone values(null,'小米 Redmi K20Pro 4800万超广角三摄 8GB+128GB 冰川蓝 骁龙855 全网通4G 双卡双待 全面屏拍照智能游戏手机',2799,null,"小米","static/img/neirongzhanshi/xioami/xiaomi/Redmik20_1.jpg","全网通 8GB+128GB","2019-5-2","冰川蓝",127665,1,887,953,0,4);	*
+
+
+//MIX系列
+insert into phone values(null,'小米Mix3 8GB+128GB黑色 骁龙845全网通4G 双卡双待 全面屏拍照智能游戏手机',2599,2499,"小米","static/img/neirongzhanshi/xioami/xiaomi/MIX3_1.jpg","全网通 8GB+128GB","2018-10-2","经典黑",128665,1,989,989,1,5);		*
+insert into phone values(null,'小米MIX2S 全面屏拍照游戏手机8GB+256GB 白色 全网通4G 陶瓷手机 限时优惠700，到手价仅2299！白条6期免息！',2999,2299,"小米","static/img/neirongzhanshi/xioami/xiaomi/MIX2s_1.jpg","全网通 8GB+256GB","2018-3-2","经典白",158665,0,889,986,1,5);			 *					
+insert into phone values(null,'小米CC9手机 蓝色(深蓝星球) 全网通6G+128G',1999.8,null,"小米","static/img/neirongzhanshi/xioami/xiaomi/CC9_1.jpg","全网通 6GB+128GB","2019-7-2","深蓝星球",7665,0,789,786,0,5);     *
+
+//Note系列
+insert into phone values(null,'小米 红米Redmi Note7 AI双摄 6GB+64GB 镜花水月 全网通4G 双卡双待 水滴全面屏拍照游戏智能手机',1299,null,"小米","static/img/neirongzhanshi/xioami/xiaomi/hongmiNote7_1.jpg","全网通 6GB+128GB","2019-1-2","镜花水月",457665,0,879,966,0,6);	*
+insert into phone values(null,'红米Redmi Note7 幻彩渐变AI双摄 6GB+64GB 暮光金 全网通4G 双卡双待 水滴全面屏拍照游戏智能手机',1299,null,"小米","static/img/neirongzhanshi/xioami/xiaomi/RedmiNote7_1.jpg","全网通 6GB+128GB","2019-1-2","暮光金",557665,0,878,965,0,6);	*
+insert into phone values(null,'小米 红米Note7 手机 亮黑色 全网通4G+64G',1148,null,"小米","static/img/neirongzhanshi/xioami/xiaomi/HngmiNote7_1.jpg","全网通 4GB+64GB","2019-1-2","亮黑色",17665,0,688,665,0,6);		*
+
+
+//苹果
+//Mac
+insert into phone values(null,'Apple 2019款 Macbook Pro 13.3 带触控栏 八代i5 8G 256G RP645显卡 银色 苹果笔记本电脑 轻薄本 MUHR2CH/A',11499,null,"苹果","static/img/neirongzhanshi/apple/MacbookPro13.3_1.jpg","i5 8+256G银 RP645","2019-4-2","深空灰色",76665,1,998,998,0,7);	*
+insert into phone values(null,'Apple Macbook Air 13.3 | Core i5 8G 128G SSD 苹果笔记本电脑 轻薄本 银色 MQD32CH/A',5799,null,"苹果","static/img/neirongzhanshi/apple/MacbookAir13.3_1.jpg","i5 8+128G银","2018-4-2","银色",96665,1,998,998,0,7);		*
+
+
+
+//iPhone
+insert into phone values(null,'Apple 苹果 iPhone XS Max 苹果xsmax手机 金色 全网通 256GB 12期免息0首付',15999,null,"苹果","static/img/neirongzhanshi/apple/iPhoneXSMax_1.jpg","全网通256GB","2018-9-2","金色",16665,0,988,965,0,8);													*
+insert into phone values(null,'Apple iPhone XR (A2108) 256GB 蓝色 黄色 珊瑚色 移动联通电信4G手机 双卡双待',8468,null,"苹果","static/img/neirongzhanshi/apple/iPhoneXR_1.jpg","全网通256GB","2018-10-2","蓝色",6665,0,958,955,0,8);													*
+insert into phone values(null,'Apple iPhone 7 Plus (A1661) 256G 玫瑰金色 移动联通电信4G手机',8276,null,"苹果","static/img/neirongzhanshi/apple/7Plus_1.jpg","全网通256GB","2016-9-2","玫瑰金",16665,0,951,953,0,8);																	*
+insert into phone values(null,'Apple iPhone 8 Plus (A1864) 64GB 深空灰色 移动联通电信4G手机 iPhone8Plus双面玻璃，5.5英寸视网膜大屏，无线充电，后置双摄',4699,null,"苹果","static/img/neirongzhanshi/apple/8Plus_1.jpg","全网通64GB","2017-9-2","深空灰色",1566665,1,996,985,0,8);		*
+
+//iPad 9
+insert into phone values(null,'Apple iPad mini 5 2019年新款平板电脑 7.9英寸（256G WLAN版/A12芯片/Retina显示屏/MUU32CH/A）深空灰色',4076,null,"苹果","static/img/neirongzhanshi/apple/iPadmini_1.jpg","WLAN版256GB","2019-3-2","深空灰色",86665,0,856,985,0,9);		*
+insert into phone values(null,'Apple iPad mini 5 2019年新款平板电脑 7.9英寸（64G WLAN版/A12芯片/MUQX2CH/A）银色',2976,null,"苹果","/LeQiXmall/WebContent/static/img/neirongzhanshi/apple/iPadmini5_1.jpg","WLAN版64GB","2019-3-2","银色",76665,0,856,885,0,9);		*
+
+
+//三星
+//s系列
+insert into phone values(null,'三星 Galaxy S10+ 白条12期免息 3D超声波屏下指纹双卡双待全网通4G游戏手机 烟波蓝 8+512GB全网通',8699,null,"三星","static/img/neirongzhanshi/sanxing/GalaxyS10+_1.jpg","全网通 8+512GB","2019-3-2","烟波蓝",176665,1,956,985,0,10);					*
+insert into phone values(null,'三星 Galaxy S9+ 全网通4G智能手机 莱茵蓝（6G+128G）',4158,null,"三星","static/img/neirongzhanshi/sanxing/GalaxyS9+_1.jpg","全网通 6+128GB","2018-3-2","莱茵蓝",146665,0,976,975,0,10);													*
+insert into phone values(null,'三星 Galaxy S8 4GB+64GB 谜夜黑（SM-G9500）全视曲面屏 虹膜识别 全网通4G 双卡双待',2699,2299,"三星","static/img/neirongzhanshi/sanxing/GalaxyS8+_1.jpg","全网通 4+64GB","2017-5-2","迷夜黑",116665,0,976,975,1,10);							*
+insert into phone values(null,'三星 Galaxy S10e 6GB+128GB 皓玉白（SM-G9700）超感官全视屏 骁龙855 双卡双待 全网通4G手机',4999,null,"三星","static/img/neirongzhanshi/sanxing/GalaxyS10e_1.jpg","全网通 6+128GB","2019-3-2","皓玉白",16665,0,776,975,1,10);								*
+
+//A系列
+insert into phone values(null,'三星 Galaxy A9s(SM-A9200) 后置四摄拍照手机 4G全网通 高性价比 泡泡粉 6GB+128GB',2889,null,"三星","static/img/neirongzhanshi/sanxing/A9s_1.jpg","全网通 6+128GB","2018-11-2","泡泡粉",226665,1,966,975,0,11);						*
+insert into phone values(null,'独角精灵版  三星 Galaxy A8s 6GB+128GB莓什么（SM-G8870）黑瞳全视屏手机 骁龙710芯片全网通4G 双卡双待',2099,null,"三星","static/img/neirongzhanshi/sanxing/A8s_1.jpg","全网通 6+128GB","2019-1-2","莓什么",25665,0,946,975,0,11);		*
+insert into phone values(null,'Galaxy A80 8GB+128GB太空黑 （SM-A8050） 180°炫转三摄 骁龙730G 全网通4G 双卡双待',3799,null,"三星","static/img/neirongzhanshi/sanxing/A80_1.jpg","全网通 8+128GB","2019-7-2","太空黑",26645,0,936,875,0,11);			*
+insert into phone values(null,'三星Galaxy A60元气版 黑瞳全视屏 3200万拍照手机 全网通4G 6G+64G 丹宁黑+3期免息+1年碎屏险',1499.2,null,"三星","static/img/neirongzhanshi/sanxing/A60_1.jpg","全网通 6+64GB","2018-10-2","黑瞳全视屏",13665,0,856,845,0,11);		*
+
+
+//vivo
+//NEX系列
+insert into phone values(null,'vivo NEX 双屏版 AI三摄 游戏手机 10GB+128GB 冰原蓝 移动联通电信全网通4G手机',4998,null,"vivo","static/img/neirongzhanshi/vivo/NEXshuang_1.jpg","全网通 10+128GB","2018-12-2","冰原蓝",16965,0,996,945,0,12);						*
+insert into phone values(null,'vivo NEX 零界全面屏 升降式前置摄像头 骁龙845游戏手机  星迹版 屏下指纹 8GB+128GB 全网通',4299,null,"vivo","static/img/neirongzhanshi/vivo/NEX1s_1.jpg","全网通 8+128GB","2018-9-25","星际版",333665,1,956,997,0,12);				*
+insert into phone values(null,'NEX旗舰版8GB+256GB 星钻黑  限时领300元券，12期分期免息 6.59英寸零界全面屏，升降式前置摄像头，屏幕指纹3.0，高通骁龙845处理器',4598,4998,"vivo","static/img/neirongzhanshi/vivo/NEXhei_1.jpg","全网通 8+256GB","2018-9-25","星钻黑",133665,0,886,897,1,12);		*		
+
+//x系列
+insert into phone values(null,'vivo【新品上市】 X27 印象夏日 升降式摄像头 零界全面屏拍照 4G全网通手机 【8GB+128GB】印象夏日',2698,null,"vivo","static/img/neirongzhanshi/vivo/X27_1.jpg","全网通 8+128GB","2019-7-25","印象夏日",3665,1,956,976,0,13);		*
+insert into phone values(null,'vivo X27Pro 8GB+256GB大内存 白母贝 4800万AI三摄全面屏拍照手机 移动联通电信全网通4G手机',3598,null,"vivo","static/img/neirongzhanshi/vivo/X27Pro_1.jpg","全网通 8+256GB","2019-4-25","白母贝",13665,0,898,888,0,13);			*
+insert into phone values(null,'vivo X23 双卡双待 安卓手机 幻彩版北极晨曦 全网通(6G RAM+128G ROM)',4299,null,"vivo","static/img/neirongzhanshi/vivo/x23_1.jpg","全网通 6+128GB","2018-5-25","北极晨曦",33665,0,856,868,0,13);								*
+
+//z系列
+insert into phone values(null,'vivo Z5x 6GB+128GB 极夜黑 极点屏手机 5000mAh大电池 三摄拍照手机 移动联通电信全网通4G手机',1698,null,"vivo","static/img/neirongzhanshi/vivo/z5x_1.jpg","全网通 6+128GB","2019-5-25","极夜黑",123665,0,856,897,0,14);					*
+insert into phone values(null,'Z3 6GB+64GB 极光蓝 骁龙710AIE处理器，6.3英寸水滴屏，双涡轮加速引擎，4D游戏震感，vivo游戏魔盒，红外人脸识别，AI焕颜相机',1548,1248,"vivo","static/img/neirongzhanshi/vivo/z3_1.jpg","全网通 6+64GB","2019-4-25","极光色",113665,1,856,897,1,14);		*
+insert into phone values(null,'Z1青春版4GB+64GB 极光色 6.26英寸刘海屏 ，八核处理器，Face Wake面部+指纹双识别，前置1600万AI智慧美颜',1199,1049,"vivo","static/img/neirongzhanshi/vivo/Z1_1.jpg","全网通 4+64GB","2018-9-25","极光色",123665,0,846,927,1,14);		*
+
+
+//其他
+//oppe
+insert into phone values(null,'OPPO Find X曲面全景屏 8GB+128GB 波尔多红 全网通 移动联通电信全网通4G 双卡双待手机',3999,null,"其他","static/img/neirongzhanshi/qita/OPPOFindx_1.jpg","全网通 8GB+128GB","2018-10-25","波尔多红",65665,1,946,927,0,15);				*
+insert into phone values(null,'Reno 6G+256G 珊瑚橙 【直降200 | 到手2799 | 限时12期免息 | 赠屏碎保】全景屏，4800万超清像素、支持NFC、VOOC 3.0。',2999,2799,"其他","static/img/neirongzhanshi/qita/Reno_1.jpg","全网通 6+256GB","2019-7-25","珊瑚橙",223665,1,866,927,1,15);		*
+insert into phone values(null,'OPPO R17 Pro【下单立减500元+小爱音箱】光感屏幕指纹 r17pro新品手机 雾光渐变色 8GB+128GB 官方标配',4299,null,"其他","static/img/neirongzhanshi/qita/r17_1.jpg","全网通 8GB+128GB","2018-11-25","雾光渐变色",12665,0,826,917,1,15);				*
+
+//一加
+insert into phone values(null,'一加 OnePlus 7 Pro 2K+90Hz 流体屏 骁龙855旗舰 4800万超广角三摄 8GB+256GB 星雾蓝 全面屏拍照游戏手机',4499,null,"其他","static/img/neirongzhanshi/qita/1+plus_1.jpg","全网通 8GB+256GB","2019-5-25","星雾蓝",144665,1,976,987,0,16);		*
+insert into phone values(null,'一加 OnePlus 7 骁龙855旗舰性能 4800万超清双摄 8GB+256GB 曜岩灰 全面屏拍照智能游戏手机',2969,null,"其他","static/img/neirongzhanshi/qita/1+7_1.jpg","全网通 8GB+256GB","2019-6-25","耀岩灰",87665,0,876,947,0,16);				*
+insert into phone values(null,'一加 6T 手机 OnePlus6T 1+6T 手机 光感屏幕指纹 全面屏双摄游戏手机 墨岩黑 闪充套装 8G+128G全网通 ',3099,null,"其他","static/img/neirongzhanshi/qita/1+6t_1.jpg","全网通 8GB+128GB","2018-11-25","墨岩黑",17665,0,816,817,0,16);			*
+
+//锤子
+insert into phone values(null,'锤子（smartisan） 坚果 R1 6G+128GB 碳黑色 全面屏双摄 全网通4G手机 双卡双待 游戏手机 ',2799,2599,"其他","static/img/neirongzhanshi/qita/jianguoR1_1.jpg","全网通 6GB+128GB","2018-5-25","炭黑色",87665,0,916,917,1,17);			*
+insert into phone values(null,'锤子（smartisan） 坚果Pro2s手机 锤子手机 全网通全面屏手机 炫光蓝 6G+64G套餐版 ',2999,null,"其他","static/img/neirongzhanshi/qita/jianguoPro2s_1.jpg","全网通 6GB+64GB","2018-8-25","炫光蓝",17665,0,806,807,0,17);			*
+insert into phone values(null,'锤子坚果3 手机 黑色 全网通4G+64G',2799,null,"其他","static/img/neirongzhanshi/qita/jianguo3_1.jpg","全网通 6GB+64GB","2018-4-25","墨岩黑",4665,0,716,717,0,17);					*
+//地址表
+ create table address
+(
+ id int primary key auto_increment,
+ addr varchar(100),
+ info int  ##默认地址  1为默认
+ );
+
+//用户表 uid/uname/pass/tel/aid地址主键/gender/emali/
+create table users
+(
+	uid int primary key auto_increment,
+	uname char(20) unique,
+	realname varchar(20),
+	upass char(6),
+	tel varchar(11),
+	aid int,
+	gender char(4),
+	email varchar(50),
+	constraint fk_user foreign key(aid) references address(id)
+);
+
+
+
+
+
+
+
+
+
+
+
+//购物车
+加入购物车 
+     局部刷新购物车中商品数
+     购物车商品表
+     cid——序号/num——数量/name——商品名称/price-单价/sumprice——总价（调价退款）/uid——用户id/bid——商品信息
+create table cart
+(
+	cid int primary key auto_increment,
+	bnamea varchar(100),
+	num int,
+	price float,
+	uid int,
+	bid int,
+	constraint fk_cart1 foreign key(uid) references users(uid), 
+	constraint fk_cart2 foreign key(bid) references phone(bid) 
+);
+
+
+
+
+
+

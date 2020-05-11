@@ -1,0 +1,196 @@
+#xiangqing{
+	width: 1500px;
+    height: 850px;
+    margin: auto;
+    background-color: #f4f4f4;
+}
+
+#xq{
+	width: 1500px;
+    height: 850px;
+    background-color: white;
+    margin-top: 15px;
+}
+#xiangq{
+	width: 1200px;
+    height: 650px;
+   /*  background-color: red; */
+    margin: auto;
+}
+
+.tuzhan{
+	width: 475px;
+    height: 550px;
+   /*  background-color: red; */
+    float: left;
+}
+
+
+
+#top{
+	width: 475px;
+    height: 440px;
+    /* background-color: blue; */
+}
+#top img{
+	width: 475px;
+    height: 440px;
+}
+#foot{
+	width: 475px;
+    height: 100px;
+    /* background-color: #ff00ff; */
+     margin-top:10px;
+}
+
+.foot1{
+	width: 100px;
+    height: 100px;
+    margin-right:25px;
+   
+    float:left;
+ /*    background-color: #ff80c0; */
+}
+
+.foota{
+	width: 100px;
+    height: 100px;
+   /*  background-color: #ff80c0; */
+    
+	float: right;
+}
+.foot1 img{
+	width: 100px;
+    height: 100px;
+}
+.foota img{
+	width: 100px;
+    height: 100px;
+}
+
+/* 数据 */
+.data{
+	width: 640px;
+    height: 600px;
+    
+   /*  background-color:#ff80c0; */
+    float: right;
+}
+.name1{
+	width: 570px;
+    height: 60px;
+    
+    /* background-color:#80ffff; */
+    float: left;
+    margin-top: 10px;
+   
+    font-size: 20px;
+} 
+.jieshao1{
+	width: 640px;
+    height: 60px;
+    
+    margin-top: 25px;
+    float: left;
+    font-size: 13px;
+}
+.jieshao1_font{
+	color: #ff2424;
+}
+.price1{
+	width: 640px;
+    height: 80px;
+    margin-top: 10px;
+    float: left;
+	background-color:#dedede;
+}
+.price1_a{
+	line-height: 80px;
+	font-size: 13px;
+}
+.price1_b{
+	margin-left:10px;
+	line-height: 80px;
+	font-size: 28px;
+	color: #ff2424;
+}
+.color1{
+	width: 640px;
+    height: 50px;
+    margin-top: 10px;
+    float: left;
+	/* background-color:#dedede; */
+}
+.color1_a{
+	line-height: 50px;
+	font-size: 13px;
+}
+#color1{
+	width: 150px;
+	height: 50px;
+	margin-right: 420px;
+/* 	background-color: red; */
+	float: right;
+	
+}
+
+#color1 img{
+	width: 50px;
+	height: 50px;
+}
+
+#fonta{
+	height:50px;
+	width:100px;
+/* 	background-color: green; */
+	float: right;
+	line-height: 50px;
+}
+
+.versiona{
+	width: 640px;
+    height: 40px;
+    margin-top: 10px;
+    float: left;
+	/* background-color:#dedede; */
+}
+.font_a{
+	line-height: 40px;
+	font-size: 13px;
+}
+#fonta_b{
+	height:38px;
+	width:150px;
+	/* background-color:red; */
+	float:right;
+	
+	margin-right:420px;
+	border:1px solid red;
+	text-align: center;
+}
+
+/* 购物车 */
+.gouwc{
+	width: 640px;
+	height: 100px;
+	/* background-color: #f4f4f4; */
+	float: left;
+}
+
+.addgwc{
+	width: 170px;
+	height: 60px;
+	background-color: #ff8040;
+	float: left;
+	margin-top: 20px;
+	text-align: center;
+}
+.a{
+	background-color: #ff0000;
+	margin-left: 20px;
+}
+.addgwc_font{
+	font-size: 18px;
+	color: white;
+	line-height: 60px;
+}

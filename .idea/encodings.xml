@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/WebContent/static/css/index.css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/db/sql.txt" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leeqi/utils/DButils.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/dao/CartDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/dao/PhoneDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/dao/UserDao.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/dao/impl/PhoneDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/dao/impl/UserDaoImpl.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/filter/LoginFilter.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/pojo/Brand.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/pojo/PageBean.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/pojo/Phone.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/pojo/User.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/service/BrandTypeService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/service/CartService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/service/CblService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/service/PhoneService.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/service/PicServlet.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/com/leqi/service/UserService.java" charset="GBK" />
+  </component>
+</project>
